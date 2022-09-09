@@ -8,7 +8,6 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    IntegrateAPI api=IntegrateAPI();
     return Scaffold(
       body: GetBuilder<Controller>(
         init: Controller(),
@@ -58,13 +57,6 @@ class LoginScreen extends StatelessWidget {
                         padding: const EdgeInsets.only(left: 20, right: 20),
                         child: TextFormField(
                           controller: controller.name,
-                          validator: (value) {
-                            if (value == "") {
-                              return "Please Fill Username";
-                            } else if (value!.length < 6) {
-                              return "Username is too short";
-                            }
-                          },
                           decoration: const InputDecoration(
                             filled: true,
                             fillColor: Colors.white,
@@ -88,13 +80,6 @@ class LoginScreen extends StatelessWidget {
                             top: 28, left: 20, right: 20),
                         child: TextFormField(
                           controller: controller.password,
-                          validator: (value) {
-                            if (value == "") {
-                              return "Please Fill Passowrd";
-                            } else if (value!.length < 8) {
-                              return "Your password is too short";
-                            }
-                          },
                           decoration: InputDecoration(
                             filled: true,
                             fillColor: Colors.white,
@@ -138,7 +123,6 @@ class LoginScreen extends StatelessWidget {
                         children: [
                           GestureDetector(
                             onTap: () {
-
                             },
                             child: const Text('Forgot your password?',
                               style: TextStyle(

@@ -11,6 +11,12 @@ class Controller extends GetxController{
   var outlets=[];
   var menus=[];
   IntegrateAPI api=IntegrateAPI();
+
+  onFetchMenus()async{
+    menus=await api.getAllMenus();
+    update();
+  }
+
   onPress()async{
     var obj=await api.getUser(name.text);
     if(name.text==obj?.name){
@@ -25,14 +31,10 @@ class Controller extends GetxController{
     }
     update();
   }
+
   onClick()async{
     outlets=await api.getAllOutlets();
     Get.offAndToNamed('/outlet',arguments: outlets);
     update();
   }
-  onFetchMenus()async{
-    menus=await api.getAllMenus();
-    update();
-  }
-
 }
