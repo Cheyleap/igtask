@@ -58,7 +58,8 @@ class GetStarted extends StatelessWidget {
                           ),
                         ),
                         onPressed: (){
-                          Get.offAndToNamed('/home');
+                          var name="Guest";
+                          Get.offAndToNamed('/home',arguments: name);
                         },
                         style: ElevatedButton.styleFrom(
                           primary: Colors.white,
